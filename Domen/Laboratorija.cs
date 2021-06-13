@@ -13,5 +13,9 @@ namespace Domen
         public string Naziv { get; set; }
         public int DnevniKapacitetTestova { get; set; }
         public string Grad { get; set; }
+        public override string ToString()
+        {
+            return Naziv;
+        }
     }
 }

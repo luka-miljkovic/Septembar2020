@@ -41,6 +41,17 @@ namespace Klijent
             }
         }
 
+        internal List<Zahtev> VratiNeobradjeneZahteve(Laborant laborant)
+        {
+            TransferKlasa transfer = new TransferKlasa();
+            transfer.Operacija = Operacije.VratiNeobradjeneZahteve;
+            transfer.TransferObjekat = laborant;
+            formater.Serialize(tok, transfer);
+
+            transfer = (TransferKlasa)formater.Deserialize(tok);
+            return (List<Zahtev>)transfer.Rezultat;
+        }
+
         internal Laborant PrijaviKorisnika(Laborant korisnik)
         {
             TransferKlasa transfer = new TransferKlasa();
@@ -66,6 +77,17 @@ namespace Klijent
             formater.Serialize(tok, transfer);
 
             transfer = (TransferKlasa)formater.Deserialize(tok);
+        }
+
+        internal bool SacuvajIzmene(List<Zahtev> list)
+        {
+            TransferKlasa transfer = new TransferKlasa();
+            transfer.Operacija = Operacije.SacuvajIzmene;
+            transfer.TransferObjekat = list;
+            formater.Serialize(tok, transfer);
+
+            transfer = (TransferKlasa)formater.Deserialize(tok);
+            return (bool)transfer.Rezultat;
         }
     }
 }

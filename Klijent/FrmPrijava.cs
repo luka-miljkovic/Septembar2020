@@ -23,6 +23,9 @@ namespace Klijent
         private void FrmPrijava_Load(object sender, EventArgs e)
         {
             Komunikacija.GetInstance().PoveziSeNaServer();
+
+            txtKorisnickoIme.Text = "ana";
+            txtLozinka.Text = "ana";
         }
 
         private void btnPrijavi_Click(object sender, EventArgs e)

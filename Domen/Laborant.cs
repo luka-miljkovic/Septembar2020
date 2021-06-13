@@ -15,5 +15,9 @@ namespace Domen
         public string KorisnickoIme { get; set; }
         public string Lozinka { get; set; }
         public Laboratorija Laboratorija { get; set; }
+        public override string ToString()
+        {
+            return $"{Ime} {Prezime}";
+        }
     }
 }

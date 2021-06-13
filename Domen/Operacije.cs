@@ -9,6 +9,8 @@ namespace Domen
     public enum Operacije
     {
         Kraj = 1,
-        PrijaviKorisnika = 2
+        PrijaviKorisnika = 2,
+        VratiNeobradjeneZahteve = 3,
+        SacuvajIzmene = 4
     }
 }

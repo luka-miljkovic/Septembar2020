@@ -25,3 +25,4 @@ C:\Users\Luka\Documents\Пројектовање софтвера\Вежбање
 C:\Users\Luka\Documents\Пројектовање софтвера\Вежбање ЈУН 2021\Septembar2020\Klijent\obj\Debug\Klijent.exe
 C:\Users\Luka\Documents\Пројектовање софтвера\Вежбање ЈУН 2021\Septembar2020\Klijent\obj\Debug\Klijent.pdb
 C:\Users\Luka\Documents\Пројектовање софтвера\Вежбање ЈУН 2021\Septembar2020\Klijent\obj\Debug\Klijent.FrmPrijava.resources
+C:\Users\Luka\Documents\Пројектовање софтвера\Вежбање ЈУН 2021\Septembar2020\Klijent\obj\Debug\Klijent.FrmIzmenaZahteva.resources

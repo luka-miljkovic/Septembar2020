@@ -14,5 +14,9 @@ namespace Domen
         public string Prezime { get; set; }
         public string LBO { get; set; }
         public string KrvnaGrupa { get; set; }
+        public override string ToString()
+        {
+            return $"{Ime} {Prezime}";
+        }
     }
 }

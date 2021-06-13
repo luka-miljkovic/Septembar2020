@@ -45,6 +45,14 @@ namespace Server
                             transfer.Rezultat = Broker.GetInstance().PrijaviKorisnika((Laborant)transfer.TransferObjekat);
                             formater.Serialize(tok, transfer);
                             break;
+                        case Operacije.VratiNeobradjeneZahteve:
+                            transfer.Rezultat = Broker.GetInstance().VratiNeobradjeneZahteve((Laborant)transfer.TransferObjekat);
+                            formater.Serialize(tok, transfer);
+                            break;
+                        case Operacije.SacuvajIzmene:
+                            transfer.Rezultat = Broker.GetInstance().SacuvajIzmene((List<Zahtev>)transfer.TransferObjekat);
+                            formater.Serialize(tok, transfer);
+                            break;
                         default:
                             break;
                     }

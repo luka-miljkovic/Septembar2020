@@ -66,38 +66,43 @@
             // 
             // dgvTestiranje
             // 
+            this.dgvTestiranje.AllowUserToAddRows = false;
             this.dgvTestiranje.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTestiranje.Location = new System.Drawing.Point(12, 130);
+            this.dgvTestiranje.Location = new System.Drawing.Point(12, 110);
             this.dgvTestiranje.Name = "dgvTestiranje";
+            this.dgvTestiranje.ReadOnly = true;
+            this.dgvTestiranje.RowHeadersVisible = false;
             this.dgvTestiranje.RowHeadersWidth = 51;
             this.dgvTestiranje.RowTemplate.Height = 24;
-            this.dgvTestiranje.Size = new System.Drawing.Size(776, 150);
+            this.dgvTestiranje.Size = new System.Drawing.Size(1293, 350);
             this.dgvTestiranje.TabIndex = 3;
             // 
             // btnIzmeni
             // 
-            this.btnIzmeni.Location = new System.Drawing.Point(12, 300);
+            this.btnIzmeni.Location = new System.Drawing.Point(12, 484);
             this.btnIzmeni.Name = "btnIzmeni";
             this.btnIzmeni.Size = new System.Drawing.Size(181, 30);
             this.btnIzmeni.TabIndex = 4;
             this.btnIzmeni.Text = "Izmeni izabrani zahtev";
             this.btnIzmeni.UseVisualStyleBackColor = true;
+            this.btnIzmeni.Click += new System.EventHandler(this.btnIzmeni_Click);
             // 
             // btnSacuvajIzabraneZahteve
             // 
             this.btnSacuvajIzabraneZahteve.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSacuvajIzabraneZahteve.Location = new System.Drawing.Point(12, 340);
+            this.btnSacuvajIzabraneZahteve.Location = new System.Drawing.Point(12, 520);
             this.btnSacuvajIzabraneZahteve.Name = "btnSacuvajIzabraneZahteve";
             this.btnSacuvajIzabraneZahteve.Size = new System.Drawing.Size(239, 29);
             this.btnSacuvajIzabraneZahteve.TabIndex = 5;
             this.btnSacuvajIzabraneZahteve.Text = "Sacuvaj obradjene zahteve";
             this.btnSacuvajIzabraneZahteve.UseVisualStyleBackColor = true;
+            this.btnSacuvajIzabraneZahteve.Click += new System.EventHandler(this.btnSacuvajIzabraneZahteve_Click);
             // 
             // FrmKlijent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 382);
+            this.ClientSize = new System.Drawing.Size(1420, 566);
             this.Controls.Add(this.btnSacuvajIzabraneZahteve);
             this.Controls.Add(this.btnIzmeni);
             this.Controls.Add(this.dgvTestiranje);
