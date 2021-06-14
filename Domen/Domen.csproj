@@ -45,6 +45,7 @@
     <Compile Include="Laboratorija.cs" />
     <Compile Include="Operacije.cs" />
     <Compile Include="OsiguranoLice.cs" />
+    <Compile Include="Test.cs" />
     <Compile Include="TransferKlasa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Zahtev.cs" />

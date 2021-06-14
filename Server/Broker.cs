@@ -1,5 +1,6 @@
 ﻿using Domen;
 using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -19,6 +20,39 @@ namespace Server
         {
             connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ProSoft-Septembar2020;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             command = connection.CreateCommand();
+        }
+
+        internal List<Laboratorija> VratiLaboratorije()
+        {
+            List<Laboratorija> laboratorije = new List<Laboratorija>();
+            try
+            {
+                connection.Open();
+                command.CommandText = $"select * from Laboratorija";
+                SqlDataReader reader = command.ExecuteReader();
+                while(reader.Read())
+                {
+                    Laboratorija l = new Laboratorija();
+                    l.LaboratorijaId = (int)reader[0];
+                    l.Naziv = (string)reader[1];
+                    l.DnevniKapacitetTestova = (int)reader[2];
+                    l.Grad = (string)reader[3];
+
+                    laboratorije.Add(l);
+                }
+                reader.Close();
+                return laboratorije;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+                throw;
+            }
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+            }
         }
 
         Broker()
@@ -43,6 +77,66 @@ namespace Server
             {
                 connection.Open();
                 command.CommandText = $"";
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+                throw;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        internal int BrojNegativnih(string nazivTesta, string uslov)
+        {
+            int broj = 0;
+            try
+            {
+                connection.Open();
+                command.CommandText = $"select * from Zahtev where Tip = '{nazivTesta}' {uslov}";
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    if ((string)reader[4] == "Negativan")
+                        broj++;
+                }
+                reader.Close();
+                return broj;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+                throw;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        internal int BrojPozitivnih(string nazivTesta, string uslov)
+        {
+            int broj = 0;
+            try
+            {
+                connection.Open();
+                command.CommandText = $"select * from Zahtev where Tip = '{nazivTesta}' {uslov}";
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    if ((string)reader[4] == "Pozitivan")
+                        broj++;
+                }
+                reader.Close();
+                return broj;
             }
             catch (Exception ex)
             {
@@ -112,7 +206,7 @@ namespace Server
                     if(z.Status == "Obradjen")
                     {
                         command.CommandText = $"update Zahtev " +
-                            $"set Tip = '{z.Tip}', Rezultat = '{z.Rezultat}', DatumVremeRezultata = '{z.DatumVremeRezultata.ToString("MM/dd/yyyy hh:mm tt")}', Napomena = '{z.Napomena}', Status = 'Obradjen'" +
+                            $"set Tip = '{z.Tip}', Rezultat = '{z.Rezultat}', DatumVremeRezultata = '{z.DatumVremeRezultata.ToString("MM/dd/yyyy hh:mm:ss tt")}', Napomena = '{z.Napomena}', Status = 'Obradjen', LaborantID = {z.Laborant.LaborantId} " +
                             $"where ZahtevID = {z.ZahtevId}";
                         command.ExecuteNonQuery();
                     }

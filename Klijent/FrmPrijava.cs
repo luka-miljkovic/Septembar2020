@@ -39,8 +39,9 @@ namespace Klijent
 
             if(k != null)
             {
+                this.Hide();
                 new FrmKlijent(k).ShowDialog();
-                this.Close();
+                
             }
             else
             {

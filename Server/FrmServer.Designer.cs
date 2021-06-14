@@ -31,13 +31,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.rbDanOd = new System.Windows.Forms.RadioButton();
-            this.rbDanDo = new System.Windows.Forms.RadioButton();
-            this.rbLaboratorija = new System.Windows.Forms.RadioButton();
             this.txtDanOd = new System.Windows.Forms.TextBox();
             this.txtDanDo = new System.Windows.Forms.TextBox();
             this.cmbLaboratorija = new System.Windows.Forms.ComboBox();
             this.dgvTestovi = new System.Windows.Forms.DataGridView();
+            this.cbDanOd = new System.Windows.Forms.CheckBox();
+            this.cbDanDo = new System.Windows.Forms.CheckBox();
+            this.cbLaboratorija = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTestovi)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,49 +68,16 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Republika Srbija";
             // 
-            // rbDanOd
-            // 
-            this.rbDanOd.AutoSize = true;
-            this.rbDanOd.Location = new System.Drawing.Point(12, 132);
-            this.rbDanOd.Name = "rbDanOd";
-            this.rbDanOd.Size = new System.Drawing.Size(169, 21);
-            this.rbDanOd.TabIndex = 6;
-            this.rbDanOd.TabStop = true;
-            this.rbDanOd.Text = "Dan od (dd-MM-yyyy):";
-            this.rbDanOd.UseVisualStyleBackColor = true;
-            // 
-            // rbDanDo
-            // 
-            this.rbDanDo.AutoSize = true;
-            this.rbDanDo.Location = new System.Drawing.Point(12, 177);
-            this.rbDanDo.Name = "rbDanDo";
-            this.rbDanDo.Size = new System.Drawing.Size(169, 21);
-            this.rbDanDo.TabIndex = 7;
-            this.rbDanDo.TabStop = true;
-            this.rbDanDo.Text = "Dan do (dd-MM-yyyy):";
-            this.rbDanDo.UseVisualStyleBackColor = true;
-            // 
-            // rbLaboratorija
-            // 
-            this.rbLaboratorija.AutoSize = true;
-            this.rbLaboratorija.Location = new System.Drawing.Point(12, 220);
-            this.rbLaboratorija.Name = "rbLaboratorija";
-            this.rbLaboratorija.Size = new System.Drawing.Size(105, 21);
-            this.rbLaboratorija.TabIndex = 8;
-            this.rbLaboratorija.TabStop = true;
-            this.rbLaboratorija.Text = "Laboratorija";
-            this.rbLaboratorija.UseVisualStyleBackColor = true;
-            // 
             // txtDanOd
             // 
-            this.txtDanOd.Location = new System.Drawing.Point(187, 131);
+            this.txtDanOd.Location = new System.Drawing.Point(214, 132);
             this.txtDanOd.Name = "txtDanOd";
             this.txtDanOd.Size = new System.Drawing.Size(309, 22);
             this.txtDanOd.TabIndex = 9;
             // 
             // txtDanDo
             // 
-            this.txtDanDo.Location = new System.Drawing.Point(187, 176);
+            this.txtDanDo.Location = new System.Drawing.Point(214, 177);
             this.txtDanDo.Name = "txtDanDo";
             this.txtDanDo.Size = new System.Drawing.Size(309, 22);
             this.txtDanDo.TabIndex = 10;
@@ -118,33 +85,66 @@
             // cmbLaboratorija
             // 
             this.cmbLaboratorija.FormattingEnabled = true;
-            this.cmbLaboratorija.Location = new System.Drawing.Point(187, 217);
+            this.cmbLaboratorija.Location = new System.Drawing.Point(214, 218);
             this.cmbLaboratorija.Name = "cmbLaboratorija";
             this.cmbLaboratorija.Size = new System.Drawing.Size(309, 24);
             this.cmbLaboratorija.TabIndex = 11;
             // 
             // dgvTestovi
             // 
+            this.dgvTestovi.AllowUserToAddRows = false;
             this.dgvTestovi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTestovi.Location = new System.Drawing.Point(12, 257);
             this.dgvTestovi.Name = "dgvTestovi";
+            this.dgvTestovi.ReadOnly = true;
+            this.dgvTestovi.RowHeadersVisible = false;
             this.dgvTestovi.RowHeadersWidth = 51;
             this.dgvTestovi.RowTemplate.Height = 24;
-            this.dgvTestovi.Size = new System.Drawing.Size(484, 123);
+            this.dgvTestovi.Size = new System.Drawing.Size(511, 158);
             this.dgvTestovi.TabIndex = 12;
+            // 
+            // cbDanOd
+            // 
+            this.cbDanOd.AutoSize = true;
+            this.cbDanOd.Location = new System.Drawing.Point(12, 132);
+            this.cbDanOd.Name = "cbDanOd";
+            this.cbDanOd.Size = new System.Drawing.Size(172, 21);
+            this.cbDanOd.TabIndex = 13;
+            this.cbDanOd.Text = "Dan od (dd.MM.yyyy.):";
+            this.cbDanOd.UseVisualStyleBackColor = true;
+            // 
+            // cbDanDo
+            // 
+            this.cbDanDo.AutoSize = true;
+            this.cbDanDo.Location = new System.Drawing.Point(12, 177);
+            this.cbDanDo.Name = "cbDanDo";
+            this.cbDanDo.Size = new System.Drawing.Size(172, 21);
+            this.cbDanDo.TabIndex = 14;
+            this.cbDanDo.Text = "Dan do (dd.MM.yyyy.):";
+            this.cbDanDo.UseVisualStyleBackColor = true;
+            // 
+            // cbLaboratorija
+            // 
+            this.cbLaboratorija.AutoSize = true;
+            this.cbLaboratorija.Location = new System.Drawing.Point(12, 220);
+            this.cbLaboratorija.Name = "cbLaboratorija";
+            this.cbLaboratorija.Size = new System.Drawing.Size(110, 21);
+            this.cbLaboratorija.TabIndex = 15;
+            this.cbLaboratorija.Text = "Laboratorija:";
+            this.cbLaboratorija.UseVisualStyleBackColor = true;
             // 
             // FrmServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 392);
+            this.ClientSize = new System.Drawing.Size(537, 429);
+            this.Controls.Add(this.cbLaboratorija);
+            this.Controls.Add(this.cbDanDo);
+            this.Controls.Add(this.cbDanOd);
             this.Controls.Add(this.dgvTestovi);
             this.Controls.Add(this.cmbLaboratorija);
             this.Controls.Add(this.txtDanDo);
             this.Controls.Add(this.txtDanOd);
-            this.Controls.Add(this.rbLaboratorija);
-            this.Controls.Add(this.rbDanDo);
-            this.Controls.Add(this.rbDanOd);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -162,13 +162,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton rbDanOd;
-        private System.Windows.Forms.RadioButton rbDanDo;
-        private System.Windows.Forms.RadioButton rbLaboratorija;
         private System.Windows.Forms.TextBox txtDanOd;
         private System.Windows.Forms.TextBox txtDanDo;
         private System.Windows.Forms.ComboBox cmbLaboratorija;
         private System.Windows.Forms.DataGridView dgvTestovi;
+        private System.Windows.Forms.CheckBox cbDanOd;
+        private System.Windows.Forms.CheckBox cbDanDo;
+        private System.Windows.Forms.CheckBox cbLaboratorija;
     }
 }
 
